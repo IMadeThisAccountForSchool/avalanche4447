@@ -29,8 +29,20 @@ The second dataset is merged with elevation and weather data by passing the rele
 ![Figure 1](./data/missing_lat.png)
 
 ### Getting Avalanche Data
-The inital dataset is retrived with the **requests** package, and then read-in as a DataFreame. 
+The inital dataset is retrived with the **requests** package, and then read-in as a DataFrame. 
 Key categoric features are corrected for spelling and/or simplified.
+Create the second dataset, variable name *pdf*, which is a subset of all valid *lat* and *lon*.
+
+```python
+a_req = requests.get('https://avalanche.state.co.us/sites/default/files/2022-11/Accidents_2022_PUBLIC.xlsx')
+df = pd.read_excel(a_req.content)
+df = df.replace('SKi','Ski')
+df = df.replace(['Mechanised Guide','Motorized Guided client','Mechanized Guide'],'Mechanized Guiding Client')
+#df['Date'] = df.Date.dt.date
+df[['lon','lat']] = df[['lon','lat']].fillna(0)
+pdf = df[(df.lat != 0) & (df.lon != 0)]
+pdf.reset_index()
+```
  
 
 
