@@ -18,23 +18,6 @@ df = df.replace(['Mechanised Guide','Motorized Guided client','Mechanized Guide'
 df[['lon','lat']] = df[['lon','lat']].fillna(0)
 pdf = df[(df.lat != 0) & (df.lon != 0)]
 pdf.reset_index()
-print(f'Entities of Full Dataset: {len(df)}\nEntities of Dataset with Lat/Lon: {len(pdf)}')
-
-ydf = df.groupby('YYYY')['lat']
-years = []
-nulls = []
-for y,d in ydf:
-  years.append(y)
-  nulls.append(sum(d == 0.0)/len(d))
-
-plt.figure(figsize=(15,6))
-plt.plot(years,nulls,lw=3)
-plt.title('Ratio of Missing Values for Latitude/Longitude')
-plt.suptitle('Figure 1',y=0.01)
-plt.xlabel('Years')
-plt.ylabel('Ratio')
-plt.grid()
-plt.savefig('./data/missing_data.png')
 
 def getEle(elat,elon):
   el_url = r'https://epqs.nationalmap.gov/v1/json?'
