@@ -32,7 +32,7 @@ The second dataset is merged with elevation and weather data by passing the rele
 The inital dataset is retrived with the **requests** package, and then read-in as a DataFreame. 
 Key categoric features are corrected for spelling and/or simplified.
  
-https://github.com/IMadeThisAccountForSchool/avalanche4447/blame/master/data/proj_4447.py?#L12-L19
+https://github.com/IMadeThisAccountForSchool/avalanche4447/blame/fa27794bf67596260adf82bcc80dfb93b3b3edb2/data/proj_4447.py#L12-L19
 
 - code
 - output
