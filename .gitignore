@@ -3,3 +3,5 @@
 *.xlsx
 *.log
 *.json
+*_bak.ipynb
+
