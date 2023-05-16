@@ -26,7 +26,7 @@ Since there is a significant missing data within features *lat* and *lon*, see f
 The first dataset is the original from [Colorado Avalanche Fatalities Data](https://avalanche.state.co.us/sites/default/files/2022-11/Accidents_2022_PUBLIC.xlsx), and a second dataset is a subset that has valid **longitude** and **latitude**.
 The second dataset is merged with elevation and weather data by passing the relevant fields via API. 
 
-![Figure 1](./data/missing_data.png)
+![Figure 1](./data/missing_lat.png)
 
 ### Getting Avalanche Data
 The inital dataset is retrived with the **requests** package, and then read-in as a DataFreame. 
