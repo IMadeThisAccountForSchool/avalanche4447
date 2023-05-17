@@ -154,13 +154,3 @@ This json is read into a dataframe and merged with *pdf* to create the new dataf
 geo_us = gpd.read_file('https://raw.githubusercontent.com/python-visualization/folium/main/tests/us-states.json')
 gdf = pd.merge(pdf,geo_us,left_on='State',right_on='id',how='left')
 ```
-
-## Exploratory Data Analysis
-
-## Conclusion
-
-- Goal
-- Approach
-- Code/How-To
-- Plots
-- Conclusion
