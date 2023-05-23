@@ -1,4 +1,4 @@
-# COMP 4447: Avalanche Data
+# COMP 4447: Avalanche Fatalities Data
 
 ## Introduction
 This is a final project for COMP 4447 that demonstrate collecting, manipulating, and cleaning data for further use. 
