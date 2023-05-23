@@ -8,6 +8,9 @@ To retrieve/create new features, the dataset will be split to create two dataset
 The dataset with **longitude** and **latitude**, additional data will be collected releveant to local and period. 
 With these two datasets, the project presents exploratory analysis of the relevant features. 
 
+### Literature Review
+- [CAIC Avalanche Accident Statistics](https://avalanche.state.co.us/accidents/statistics-and-reporting)
+- [Mt Kalmont - Causes of Avalanche](http://www.sfu.ca/~yla312/IAT%20235/P04_week%2013/what-causes-avalanche.html)
 
 ## Data Sources
 
