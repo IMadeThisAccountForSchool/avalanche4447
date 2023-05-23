@@ -11,7 +11,7 @@ With these two datasets, the project presents exploratory analysis of the releva
 
 ## Data Sources
 
-[Colorado Avalanche Fatalities Data](https://avalanche.state.co.us/sites/default/files/2022-11/Accidents_2022_PUBLIC.xlsx): The data provided is an excel worksheet (*xlsx*) which is a comprehensive dataset of avalanches within the US. 
+[Colorado Avalanche Fatalities Data](https://avalanche.state.co.us/sites/default/files/2022-11/Accidents_2022_PUBLIC.xlsx): The data provided is an excel worksheet (*xlsx*) which is a comprehensive dataset of avalanches within the US.  [Reference](https://avalanche.state.co.us/forecasts/help/observation-avalanche)
 
 [USGS Elevation](https://apps.nationalmap.gov/epqs/): An open API that returns the geographic elevation given **longitude** and **latitude**.
 
