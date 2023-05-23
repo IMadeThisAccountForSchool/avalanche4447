@@ -38,11 +38,16 @@ The feature *Date* is converted to **datetime** object.
 Create the second dataset, variable name *pdf*, which is a subset of all valid *lat* and *lon*.
 
 ```python
+# Get data
 a_req = requests.get('https://avalanche.state.co.us/sites/default/files/2022-11/Accidents_2022_PUBLIC.xlsx')
 df = pd.read_excel(a_req.content)
+
+# Cleaning Data
 df = df.replace('SKi','Ski')
 df = df.replace(['Mechanised Guide','Motorized Guided client','Mechanized Guide'],'Mechanized Guiding Client')
 df[['lon','lat']] = df[['lon','lat']].fillna(0)
+
+# Second dataframe
 pdf = df[(df.lat != 0) & (df.lon != 0)]
 pdf.reset_index()
 ```
@@ -86,12 +91,15 @@ By iterating through each row of *pdf*, *lat*, *lon*, and *Date* are passed to t
 The returns are pushed onto lists, which are then assigned as a feature in *pdf*.
 
 ```python
+# Setup empty lists 
 w_url = 'https://archive-api.open-meteo.com/v1/archive'
 precip = []
 wind_max = []
 atemp_max = []
 atemp_min = []
 atemp_avg = []
+
+# Loop through available lat and lon
 for i,r in enumerate(pdf.iterrows()):
   w_pars = {
     'timezone':'auto',
@@ -107,6 +115,8 @@ for i,r in enumerate(pdf.iterrows()):
   atemp_max.append(w_dat['apparent_temperature_max'][0])
   atemp_min.append(w_dat['apparent_temperature_min'][0])
   atemp_avg.append((w_dat['apparent_temperature_max'][0]+w_dat['apparent_temperature_min'][0])/2)
+
+# Add new data to pdf
 pdf['precipitation_sum'] = precip
 pdf['windspeed_max'] = wind_max
 pdf['apparent_temperature_max'] = atemp_max
